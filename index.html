@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiro Agente de IA - Crie e Venda em 30 Dias</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --noite-digital: #0D0F1F;
+            --energia-base: #2E2C74;
+            --pulsar: #8571FF;
+            --nebulosa: #D6B8FF;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--noite-digital);
+            color: white;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: 
+                url('Imagem-de-fundo---Agente-IA---desktop.png') no-repeat center top / cover,
+                linear-gradient(135deg, var(--noite-digital) 0%, var(--energia-base) 100%);
+            padding: 50px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                background: 
+                    url('Imagem-de-fundo---Agente-IA---mobile.png') no-repeat center top / cover,
+                    linear-gradient(135deg, var(--noite-digital) 0%, var(--energia-base) 100%);
+                padding: 240px 0 100px;
+                min-height: 100vh;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 20px;
+                padding-top: 150px;
+            }
+
+            .hero-text {
+                order: 2;
+            }
+
+            .hero-visual {
+                order: 1;
+            }
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(135deg, rgba(13, 15, 31, 0.4) 0%, rgba(46, 44, 116, 0.2) 50%, rgba(13, 15, 31, 0.4) 100%),
+                radial-gradient(circle at 20% 50%, var(--pulsar) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, var(--nebulosa) 0%, transparent 50%);
+            opacity: 0.8;
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.1; }
+            50% { opacity: 0.2; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            text-align: left;
+        }
+
+        .hero-text {
+            color: white;
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .emoji-badge {
+            font-size: 43px;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        h1 {
+            font-size: 3.2em;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .subheadline {
+            font-size: 1.35em;
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .highlight {
+            color: white;
+            font-weight: 700;
+        }
+
+        .cta-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--pulsar) 0%, var(--nebulosa) 100%);
+            color: var(--noite-digital);
+            padding: 20px 50px;
+            font-size: 1.08em;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 10px 30px rgba(133, 113, 255, 0.3);
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(133, 113, 255, 0.5);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 30px 0;
+            position: relative;
+        }
+
+        .section-alternate {
+            background: linear-gradient(180deg, var(--noite-digital) 0%, var(--energia-base) 50%, var(--noite-digital) 100%);
+        }
+
+        .section-title {
+            font-size: 2.50em;
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--nebulosa);
+        }
+
+        .section-subtitle {
+            font-size: 1.17em;
+            text-align: center;
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Cards */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: linear-gradient(135deg, var(--energia-base) 0%, var(--noite-digital) 100%);
+            border: 2px solid var(--pulsar);
+            border-radius: 20px;
+            padding: 40px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--nebulosa);
+        }
+
+        .card-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .card-title {
+            font-size: 1.22em;
+            color: var(--pulsar);
+            margin-bottom: 15px;
+        }
+
+        .card-text {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+        }
+
+        /* Promise Box */
+        .promise-box {
+            background: linear-gradient(135deg, var(--pulsar) 0%, var(--energia-base) 100%);
+            padding: 40px;
+            border-radius: 30px;
+            text-align: center;
+            margin: 40px 0;
+            box-shadow: 0 20px 60px rgba(133, 113, 255, 0.4);
+        }
+
+        .promise-box h2 {
+            font-size: 1.70em;
+            margin-bottom: 30px;
+        }
+
+        .promise-list {
+            text-align: left;
+            max-width: 700px;
+            margin: 30px auto;
+        }
+
+        .promise-item {
+            font-size: 1.08em;
+            margin-bottom: 20px;
+            padding-left: 40px;
+            position: relative;
+        }
+
+        .promise-item::before {
+            content: '🧩';
+            position: absolute;
+            left: 0;
+            font-size: 1.5em;
+        }
+
+        /* Mentors */
+        .mentors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .mentor-card {
+            background: linear-gradient(135deg, var(--energia-base) 0%, var(--noite-digital) 100%);
+            border-radius: 20px;
+            padding: 40px;
+            border: 2px solid var(--pulsar);
+        }
+
+        .mentor-image-wrapper {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            border: 3px solid var(--pulsar);
+            position: relative;
+            background: var(--energia-base);
+        }
+
+        .mentor-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .mentor-name {
+            font-size: 1.46em;
+            color: var(--nebulosa);
+            margin-bottom: 10px;
+        }
+
+        .mentor-role {
+            font-size: 0.99em;
+            color: var(--pulsar);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .mentor-bio {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+        }
+
+        /* Modules */
+        .modules-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .module-item {
+            background: linear-gradient(135deg, var(--energia-base) 0%, var(--noite-digital) 100%);
+            border-left: 5px solid var(--pulsar);
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .module-item:hover {
+            transform: translateX(10px);
+        }
+
+        .module-number {
+            color: var(--nebulosa);
+            font-weight: 700;
+            font-size: 1.17em;
+            margin-bottom: 10px;
+        }
+
+        .module-title {
+            font-size: 1.22em;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .module-description {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Bonus */
+        .bonus-box {
+            background: linear-gradient(135deg, var(--nebulosa) 0%, var(--pulsar) 100%);
+            color: var(--noite-digital);
+            padding: 40px;
+            border-radius: 30px;
+            margin: 40px 0;
+            box-shadow: 0 20px 60px rgba(214, 184, 255, 0.4);
+        }
+
+        .bonus-box h3 {
+            font-size: 1.78em;
+            margin-bottom: 30px;
+        }
+
+        .bonus-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .bonus-feature {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            font-weight: 600;
+        }
+
+        /* Pricing */
+        .pricing-box {
+            background: linear-gradient(135deg, var(--energia-base) 0%, var(--pulsar) 100%);
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 50px;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(133, 113, 255, 0.5);
+        }
+
+        .pricing-items {
+            text-align: left;
+            margin: 30px 0;
+        }
+
+        .pricing-item {
+            font-size: 1.08em;
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .pricing-item::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--nebulosa);
+            font-weight: 900;
+        }
+
+        .old-price {
+            font-size: 1.35em;
+            text-decoration: line-through;
+            opacity: 0.6;
+            margin-bottom: 10px;
+        }
+
+        .new-price {
+            font-size: 4em;
+            font-weight: 900;
+            margin: 10px 0;
+            color: var(--nebulosa);
+        }
+
+        .guarantee {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 30px;
+            font-size: 0.99em;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            background: linear-gradient(180deg, var(--noite-digital) 0%, var(--energia-base) 50%, var(--noite-digital) 100%);
+            padding: 50px 0;
+        }
+
+        .testimonials-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonials-carousel {
+            display: flex;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(133, 113, 255, 0.3);
+            max-width: 800px;
+            margin: 0 auto;
+            gap: 30px;
+        }
+
+        .testimonial-slide {
+            min-width: calc(50% - 15px);
+            background: linear-gradient(135deg, var(--energia-base) 0%, var(--noite-digital) 100%);
+            border: 2px solid var(--pulsar);
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.5s ease-in-out;
+            position: relative;
+            aspect-ratio: 1/1;
+            border-radius: 15px;
+        }
+
+        .testimonial-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 15px;
+            display: block;
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .carousel-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--pulsar) 0%, var(--nebulosa) 100%);
+            border: none;
+            color: var(--noite-digital);
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(133, 113, 255, 0.5);
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .carousel-dot.active {
+            background: var(--pulsar);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--noite-digital);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 2px solid var(--energia-base);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9em;
+            line-height: 1.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+                line-height: 1.3;
+                margin-bottom: 20px;
+            }
+
+            .section-title {
+                font-size: 1.46em;
+            }
+
+            .subheadline {
+                font-size: 1.1em;
+                margin-bottom: 15px;
+            }
+
+            .cta-primary {
+                font-size: 0.9em;
+                padding: 15px 30px;
+                margin-top: 20px;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .hero-visual {
+                order: -1;
+            }
+
+            .mentors-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-box {
+                padding: 40px 20px;
+            }
+
+            .testimonials-carousel {
+                max-width: 350px;
+                gap: 0;
+            }
+
+            .testimonial-slide {
+                min-width: 100%;
+                padding: 15px;
+            }
+
+            .testimonial-image {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="emoji-badge"><!--  🧠--></div>
+                    <h1>Construa seu Primeiro Agente de IA e Venda por até R$3.000 em 30 Dias</h1>
+                    <p class="subheadline">
+                        Não é mais sobre "aprender ferramentas".<br>
+                        É sobre <span class="highlight">ganhar dinheiro com a nova profissão que está surgindo</span>: criar, configurar e vender agentes de IA prontos.
+                    </p>
+                    <p style="font-size: 1.08em; margin-top: 20px; color: white;">
+                        Mesmo que você nunca tenha programado na vida.
+                    </p>
+                    <a href="#oferta" class="cta-primary">QUERO CRIAR MEU AGENTE DE IA AGORA</a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Nova Corrida do Ouro -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">🚀 A Nova Corrida do Ouro Digital</h2>
+            <div class="section-subtitle">
+                <p>Em 2020, quem aprendeu tráfego pago ficou rico.</p>
+                <p>Em 2022, quem criou cursos online lucrou alto.</p>
+                <p><strong>Agora, em 2025, quem domina agentes de IA está no topo da onda.</strong></p>
+            </div>
+            
+            <div class="promise-box">
+                <h2>👉 Empresas, influenciadores e negócios locais estão pagando de R$2.000 a R$5.000 por um agente personalizado.</h2>
+                <p style="font-size: 1.17em; margin-top: 20px;">E você pode aprender <strong>a criar o seu em menos de 3 horas</strong>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- A Promessa -->
+    <section class="section-alternate">
+        <div class="container">
+            <h2 class="section-title">🎯 A Promessa do Curso</h2>
+            
+            <div class="promise-box">
+                <h2>Em até 3 horas, você terá seu primeiro Agente de IA pronto, funcionando no WhatsApp e conectado a uma base de dados.</h2>
+                <p style="font-size: 1.17em; margin-top: 20px;">
+                    E em até <strong>30 dias, você pode vender sua primeira automação</strong> e recuperar o valor investido <strong>mais de 100x</strong>.
+                </p>
+            </div>
+
+            <div class="promise-list">
+                <div class="promise-item">A montar toda a estrutura do agente (N8n + Evolution API + Supabase).</div>
+                <div class="promise-item">A conectar com o WhatsApp e treinar respostas com IA.</div>
+                <div class="promise-item">A criar automações de atendimento, vendas e agendamento.</div>
+                <div class="promise-item">E a <strong>vender seu agente</strong> com o mesmo modelo usado por profissionais de automação.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meta R$3.000 -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">💰 Sua Meta: R$3.000 em 30 Dias</h2>
+            <p class="section-subtitle">
+                O curso foi desenhado com um único objetivo:<br>
+                <strong style="color: var(--pulsar); font-size: 1.08em;">te fazer faturar R$3.000 com seu primeiro agente de IA em até 30 dias.</strong>
+            </p>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">🔥</div>
+                    <h3 class="card-title">Mesmo começando do zero</h3>
+                    <p class="card-text">Não importa se você nunca trabalhou com tecnologia antes. O método é 100% passo a passo.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🔥</div>
+                    <h3 class="card-title">Mesmo sem saber programar</h3>
+                    <p class="card-text">Você não precisa escrever código complexo. Tudo é visual e intuitivo.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🔥</div>
+                    <h3 class="card-title">Mesmo sem seguidores</h3>
+                    <p class="card-text">Você vai aprender a prospectar e vender sem depender de audiência nas redes sociais.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <p style="font-size: 1.35em; color: var(--nebulosa);">Você só precisa seguir o passo a passo e aplicar.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mentores -->
+    <section class="section-alternate">
+        <div class="container">
+            <h2 class="section-title">👥 Quem São Seus Mentores</h2>
+            
+            <div class="mentors-grid">
+                <div class="mentor-card">
+                    <div class="mentor-image-wrapper">
+                        <img src="jonathanrenan (1).png" alt="Jonathan Renan" class="mentor-image">
+                    </div>
+                    <h3 class="mentor-name">Jonathan Renan</h3>
+                    <p class="mentor-role">Especialista em Automações, IA e Marketing</p>
+                    <p class="mentor-bio">
+                        Fundador do curso <strong>Dominando Automações</strong>, com mais de <strong>4 mil alunos</strong>, e à frente da <strong>EcoUp Digital</strong> há 6 anos, atuo há mais de 12 anos no mercado construindo sistemas que unem estratégia e tecnologia para escalar vendas com eficiência.<br><br>
+                        
+                        Meu foco é transformar operações em <strong>máquinas previsíveis de crescimento</strong>: integro ferramentas, desenho fluxos inteligentes, corto desperdícios e aumento conversão ponta a ponta.<br><br>
+                        
+                        No caminho, <strong>gerenciei campanhas com faturamento de múltiplos 6 dígitos</strong> e implementei <strong>stacks de automação que viabilizaram múltiplos 7 dígitos em receita</strong>, em negócios próprios e de clientes.
+                    </p>
+                </div>
+
+                <div class="mentor-card">
+                    <div class="mentor-image-wrapper">
+                        <img src="luanalves.png" alt="Luan Alves" class="mentor-image">
+                    </div>
+                    <h3 class="mentor-name">Luan Alves</h3>
+                    <p class="mentor-role">Empreendedor e especialista em automações e IA</p>
+                    <p class="mentor-bio">
+                        Criador de soluções como o <strong>Seu DinDin</strong> (assistente financeiro via WhatsApp) e da <strong>Academia das Automações</strong> (formação prática em n8n e IA), atua no desenvolvimento de <strong>micro-SaaS, agentes de atendimento automatizado e sistemas de vendas escaláveis</strong>.<br><br>
+                        
+                        Com experiência prática, já <strong>prestou suporte e mentorias para mais de 3 mil alunos</strong>, ajudando empreendedores e profissionais a <strong>implementarem tecnologia de forma simples, lucrativa e estratégica.</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Módulos -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">🧱 O Que Você Vai Construir</h2>
+            
+            <div class="modules-list">
+                <div class="module-item">
+                    <div class="module-number">🔰 Módulo 00</div>
+                    <h3 class="module-title">Comece por Aqui</h3>
+                    <p class="module-description">Boas-vindas, grupo exclusivo, pitch de vendas e acesso à Comunidade AutoIA.</p>
+                </div>
+
+                <div class="module-item">
+                    <div class="module-number">⚙️ Módulo 01</div>
+                    <h3 class="module-title">Preparando o Terreno</h3>
+                    <p class="module-description">Domínio, VPS, instalação do N8n e Evolution API — tudo configurado corretamente.</p>
+                </div>
+
+                <div class="module-item">
+                    <div class="module-number">🧩 Módulo 02</div>
+                    <h3 class="module-title">Fundamentos do N8n</h3>
+                    <p class="module-description">Entenda workflows, nodes, lógica condicional e tratamento de erros.</p>
+                </div>
+
+                <div class="module-item">
+                    <div class="module-number">🔗 Módulo 03</div>
+                    <h3 class="module-title">Evolution API</h3>
+                    <p class="module-description">Conecte seu agente ao WhatsApp e veja ele conversar sozinho com pessoas reais.</p>
+                </div>
+
+                <div class="module-item">
+                    <div class="module-number">🧠 Módulo 04</div>
+                    <h3 class="module-title">Banco de Dados</h3>
+                    <p class="module-description">Monte a estrutura no Supabase e Baserow — e salve tudo o que o agente faz.</p>
+                </div>
+
+                <div class="module-item">
+                    <div class="module-number">🤖 Módulo 05</div>
+                    <h3 class="module-title">Prompts e IA</h3>
+                    <p class="module-description">Crie prompts poderosos e ensine sua IA a agir como um verdadeiro assistente autônomo.</p>
+                </div>
+
+                <div class="module-item">
+                    <div class="module-number">🧱 Módulo 06</div>
+                    <h3 class="module-title">Agente Base IA</h3>
+                    <p class="module-description">Monte seu agente completo em 5 partes, use templates prontos e automatize vendas, atendimentos e agendamentos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bônus -->
+    <section class="section-alternate">
+        <div class="container">
+            <h2 class="section-title">🎁 Bônus Exclusivo (Limitado)</h2>
+            
+            <div class="bonus-box">
+                <h3>💼 Bônus: "Fazendo Sua Primeira Venda"</h3>
+                <p style="font-size: 1.08em; margin-bottom: 30px;">
+                    Aprenda a transformar seu agente de IA em renda. Nesse módulo extra, você vai aprender <strong>como vender de forma inbound e outbound</strong>, passo a passo.
+                </p>
+
+                <div style="text-align: left; max-width: 700px; margin: 0 auto;">
+                    <p style="font-size: 1.08em; margin-bottom: 20px;"><strong>🎯 Você vai descobrir:</strong></p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 15px;">✓ Como encontrar e abordar clientes interessados em automação.</li>
+                        <li style="margin-bottom: 15px;">✓ Como vender agentes de IA de R$2.000 a R$5.000 com posicionamento simples.</li>
+                        <li style="margin-bottom: 15px;">✓ Como gerar autoridade e leads sem precisar aparecer.</li>
+                        <li style="margin-bottom: 15px;">✓ Como fechar vendas usando apenas WhatsApp e mensagem direta.</li>
+                    </ul>
+                </div>
+
+                <div class="bonus-features">
+                    <div class="bonus-feature">
+                        <strong>Template 1:</strong> Prospectando via LinkedIn (mensagem profissional e abordagem estratégica)
+                    </div>
+                    <div class="bonus-feature">
+                        <strong>Template 2:</strong> Prospectando via Google (mapa de busca + script direto para contato com empresas locais)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">💬 VEJA O QUE OS ALUNOS FALAM</h2>
+            <p class="section-subtitle">
+                Mais de 4.000 alunos já transformaram suas vidas com automações e agentes de IA
+            </p>
+            
+            <div class="testimonials-container">
+                <div class="testimonials-carousel" id="testimonialsCarousel">
+                    <!-- Imagem 1 -->
+                    <div class="testimonial-slide">
+                        <img src="prova-social/WhatsApp Image 2025-09-10 at 20.26.53.jpeg" alt="Depoimento de aluno" class="testimonial-image">
+                    </div>
+
+                    <!-- Imagem 2 -->
+                    <div class="testimonial-slide">
+                        <img src="prova-social/WhatsApp Image 2025-09-10 at 20.27.33.jpeg" alt="Depoimento de aluno" class="testimonial-image">
+                    </div>
+
+                    <!-- Imagem 3 -->
+                    <div class="testimonial-slide">
+                        <img src="prova-social/WhatsApp Image 2025-09-10 at 20.28.17.jpeg" alt="Depoimento de aluno" class="testimonial-image">
+                    </div>
+
+                    <!-- Imagem 4 -->
+                    <div class="testimonial-slide">
+                        <img src="prova-social/WhatsApp Image 2025-09-10 at 20.28.45.jpeg" alt="Depoimento de aluno" class="testimonial-image">
+                    </div>
+
+                    <!-- Imagem 5 -->
+                    <div class="testimonial-slide">
+                        <img src="prova-social/WhatsApp Image 2025-09-10 at 20.29.01.jpeg" alt="Depoimento de aluno" class="testimonial-image">
+                    </div>
+
+                    <!-- Imagem 6 -->
+                    <div class="testimonial-slide">
+                        <img src="prova-social/WhatsApp Image 2025-09-10 at 20.29.12.jpeg" alt="Depoimento de aluno" class="testimonial-image">
+                    </div>
+
+                    <!-- Imagem 7 -->
+                    <div class="testimonial-slide">
+                        <img src="prova-social/WhatsApp Image 2025-09-10 at 20.29.20.jpeg" alt="Depoimento de aluno" class="testimonial-image">
+                    </div>
+
+                    <!-- Imagem 8 -->
+                    <div class="testimonial-slide">
+                        <img src="prova-social/WhatsApp Image 2025-09-10 at 20.29.48.jpeg" alt="Depoimento de aluno" class="testimonial-image">
+                    </div>
+
+                    <!-- Imagem 9 -->
+                    <div class="testimonial-slide">
+                        <img src="prova-social/WhatsApp Image 2025-09-10 at 20.30.13.jpeg" alt="Depoimento de aluno" class="testimonial-image">
+                    </div>
+
+                    <!-- Imagem 10 -->
+                    <div class="testimonial-slide">
+                        <img src="prova-social/WhatsApp Image 2025-09-10 at 20.31.29.jpeg" alt="Depoimento de aluno" class="testimonial-image">
+                    </div>
+
+                    <!-- Imagem 11 -->
+                    <div class="testimonial-slide">
+                        <img src="prova-social/WhatsApp Image 2025-09-10 at 20.32.01.jpeg" alt="Depoimento de aluno" class="testimonial-image">
+                    </div>
+                </div>
+
+                <!-- Controles do Carrossel -->
+                <div class="carousel-controls">
+                    <button class="carousel-btn" onclick="previousSlide()">‹</button>
+                    <button class="carousel-btn" onclick="nextSlide()">›</button>
+                </div>
+
+                <!-- Indicadores -->
+                <div class="carousel-dots" id="carouselDots">
+                    <button class="carousel-dot active" onclick="currentSlide(1)"></button>
+                    <button class="carousel-dot" onclick="currentSlide(2)"></button>
+                    <button class="carousel-dot" onclick="currentSlide(3)"></button>
+                    <button class="carousel-dot" onclick="currentSlide(4)"></button>
+                    <button class="carousel-dot" onclick="currentSlide(5)"></button>
+                    <button class="carousel-dot" onclick="currentSlide(6)"></button>
+                    <button class="carousel-dot" onclick="currentSlide(7)"></button>
+                    <button class="carousel-dot" onclick="currentSlide(8)"></button>
+                    <button class="carousel-dot" onclick="currentSlide(9)"></button>
+                    <button class="carousel-dot" onclick="currentSlide(10)"></button>
+                    <button class="carousel-dot" onclick="currentSlide(11)"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Oferta -->
+    <section id="oferta">
+        <div class="container">
+            <h2 class="section-title">💸 O Que Você Leva</h2>
+            
+            <div class="pricing-box">
+                <div class="pricing-items">
+                    <div class="pricing-item">Acesso vitalício ao curso completo</div>
+                    <div class="pricing-item">Grupo de alunos exclusivo no WhatsApp</div>
+                    <div class="pricing-item">Templates prontos de agentes (para copiar e usar)</div>
+                    <div class="pricing-item">Framework exclusivo de prompts para agentes reais</div>
+                    <div class="pricing-item">Bônus: Módulo "Fazendo sua primeira venda" + 2 Templates de prospecção</div>
+                </div>
+
+                <div class="old-price">De R$297</div>
+                <div class="new-price">R$ 19,90</div>
+
+                <a href="#" class="cta-primary" style="margin-top: 30px;">QUERO CONSTRUIR MEU PRIMEIRO AGENTE DE IA AGORA</a>
+
+                <div class="guarantee">
+                    💎 <strong>Garantia Total:</strong> Se aplicar o método e não criar seu agente em 7 dias, você recebe seu dinheiro de volta.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chamada Final -->
+    <section class="section-alternate">
+        <div class="container">
+            <div style="text-align: center;">
+                <h2 class="section-title">⚡ Crie seu primeiro Agente de IA em menos de 3 horas e venda por até R$3.000 em 30 dias</h2>
+                
+                <div style="font-size: 1.35em; margin: 40px 0; color: var(--nebulosa);">
+                    <p>🎯 100% prático.</p>
+                    <p>🎯 100% passo a passo.</p>
+                    <p>🎯 100% resultado.</p>
+                </div>
+
+                <a href="#oferta" class="cta-primary">QUERO CONSTRUIR MEU PRIMEIRO AGENTE DE IA AGORA</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p><strong>© 2025 EcoUP Marketing Digital LTDA. Todos os Direitos Reservados</strong></p>
+            <p><strong>CNPJ 37.283.718/0001-42</strong></p>
+            <p style="margin-top: 20px;">
+                Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook. Depois de sair do Facebook, a responsabilidade não recai sobre eles, mas sim sobre o nosso site. Não vendemos seu e-mail ou qualquer outra informação a terceiros. Nunca enviamos nenhum tipo de spam.
+            </p>
+            <p style="margin-top: 20px;">
+                Caso tenha alguma dúvida, não hesite em utilizar o link de contato para entrar em contato conosco em horário comercial, de segunda a sexta, das 09h00 às 17h00. Lemos e respondemos todas as mensagens por ordem de chegada.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const dots = document.querySelectorAll('.carousel-dot');
+        const totalSlides = slides.length;
+        let slidesPerView = window.innerWidth <= 768 ? 1 : 2;
+        const totalGroups = Math.ceil(totalSlides / slidesPerView);
+
+        // Atualiza slidesPerView quando a janela é redimensionada
+        window.addEventListener('resize', function() {
+            slidesPerView = window.innerWidth <= 768 ? 1 : 2;
+        });
+
+        function showSlides(startIndex) {
+            // Esconde todos os slides
+            slides.forEach(slide => {
+                slide.style.display = 'none';
+            });
+            
+            // Remove classe active de todos os dots
+            dots.forEach(dot => {
+                dot.classList.remove('active');
+            });
+            
+            // Mostra 3 slides a partir do índice atual
+            for (let i = 0; i < slidesPerView; i++) {
+                const slideIndex = (startIndex + i) % totalSlides;
+                if (slides[slideIndex]) {
+                    slides[slideIndex].style.display = 'flex';
+                }
+            }
+            
+            // Ativa o dot correspondente ao grupo atual
+            const dotIndex = Math.floor(startIndex / slidesPerView);
+            if (dots[dotIndex]) {
+                dots[dotIndex].classList.add('active');
+            }
+        }
+
+        function nextSlide() {
+            currentSlideIndex = (currentSlideIndex + slidesPerView) % totalSlides;
+            showSlides(currentSlideIndex);
+        }
+
+        function previousSlide() {
+            currentSlideIndex = (currentSlideIndex - slidesPerView + totalSlides) % totalSlides;
+            showSlides(currentSlideIndex);
+        }
+
+        function currentSlide(index) {
+            currentSlideIndex = (index - 1) * slidesPerView;
+            showSlides(currentSlideIndex);
+        }
+
+        // Auto-play do carrossel
+        function autoPlay() {
+            nextSlide();
+        }
+
+        // Inicializa o carrossel
+        document.addEventListener('DOMContentLoaded', function() {
+            showSlides(0);
+            
+            // Auto-play a cada 5 segundos
+            setInterval(autoPlay, 5000);
+        });
+    </script>
+</body>
+</html>
