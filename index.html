@@ -35,7 +35,7 @@
         /* Hero Section */
         .hero {
             background: 
-                url('Imagem-de-fundo---Agente-IA---desktop.png') no-repeat center top / cover,
+                url('Imagem-de-fundo---Agente-IA---desktop.png') no-repeat center 15% / cover,
                 linear-gradient(135deg, var(--noite-digital) 0%, var(--energia-base) 100%);
             padding: 50px 0 60px;
             position: relative;
@@ -45,7 +45,7 @@
         @media (max-width: 768px) {
             .hero {
                 background: 
-                    url('Imagem-de-fundo---Agente-IA---mobile.png') no-repeat center top / cover,
+                    url('Imagem-de-fundo---Agente-IA---mobile.png') no-repeat center 15% / cover,
                     linear-gradient(135deg, var(--noite-digital) 0%, var(--energia-base) 100%);
                 padding: 240px 0 100px;
                 min-height: 100vh;
@@ -307,6 +307,43 @@
         .mentor-bio {
             color: rgba(255, 255, 255, 0.9);
             line-height: 1.8;
+        }
+
+        .mentor-social {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--pulsar);
+            text-decoration: none;
+            font-size: 0.95em;
+            font-weight: 500;
+            padding: 8px 16px;
+            border: 1px solid var(--pulsar);
+            border-radius: 20px;
+            background: rgba(133, 113, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--pulsar);
+            color: var(--noite-digital);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(133, 113, 255, 0.3);
+        }
+
+        .social-icon {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+        }
+
+        .social-handle {
+            font-weight: 600;
         }
 
         /* Modules */
@@ -700,6 +737,13 @@
                         
                         No caminho, <strong>gerenciei campanhas com faturamento de múltiplos 6 dígitos</strong> e implementei <strong>stacks de automação que viabilizaram múltiplos 7 dígitos em receita</strong>, em negócios próprios e de clientes.
                     </p>
+                    
+                    <div class="mentor-social">
+                        <a href="https://www.instagram.com/jonathanrenan.ia/" target="_blank" class="social-link">
+                            <img src="instagram.png" alt="Instagram" class="social-icon">
+                            <span class="social-handle">@jonathanrenan.ia</span>
+                        </a>
+                    </div>
                 </div>
 
                 <div class="mentor-card">
@@ -713,6 +757,13 @@
                         
                         Com experiência prática, já <strong>prestou suporte e mentorias para mais de 3 mil alunos</strong>, ajudando empreendedores e profissionais a <strong>implementarem tecnologia de forma simples, lucrativa e estratégica.</strong>
                     </p>
+                    
+                    <div class="mentor-social">
+                        <a href="https://www.instagram.com/luan.automacoes/" target="_blank" class="social-link">
+                            <img src="instagram.png" alt="Instagram" class="social-icon">
+                            <span class="social-handle">@luan.automacoes</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -751,7 +802,7 @@
                 <div class="module-item">
                     <div class="module-number">🧠 Módulo 04</div>
                     <h3 class="module-title">Banco de Dados</h3>
-                    <p class="module-description">Monte a estrutura no Supabase e Baserow — e salve tudo o que o agente faz.</p>
+                    <p class="module-description">Monte a estrutura no Supabase — e salve tudo o que o agente faz.</p>
                 </div>
 
                 <div class="module-item">
